@@ -1,0 +1,14 @@
+/*********************************************************
+-------------------------- Haze --------------------------
+Design: apopagasm
+CSS: Exanurous
+Build: 41
+Bug Reports: forums.php?action=viewthread&threadid=584
+Style derived from Gazelle Postmod
+*********************************************************/
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,bold);
+@import url(https://rawgit.com/exanurous/haze_pth/master/layout-blue.css);
+
+/* Background Image */
+body {background-image: url('https://i.imgur.com/0YrbXGV.png');}
