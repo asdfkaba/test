@@ -37,19 +37,6 @@ class Rect:
     def __repr(self):
         return str(self)
 
-def gen_prim_pyth_trips(limit=None):
-    u = np.mat(' 1  2  2; -2 -1 -2; 2 2 3')
-    a = np.mat(' 1  2  2;  2  1  2; 2 2 3')
-    d = np.mat('-1 -2 -2;  2  1  2; 2 2 3')
-    uad = np.array([u, a, d])
-    m = np.array([3, 4, 5])
-    while m.size:
-        m = m.reshape(-1, 3)
-        if limit:
-            m = m[m[:, 2] <= limit]
-        yield m
-        m = np.dot(m, uad)
-
 def is_finished(rects, val):
     # is sum(area(rect)) correct?
     tmp = 0
@@ -84,7 +71,7 @@ def build_split_up(rest_of_c, rest_of_d):
 
 def calc(triple):
     solution = []
-    # append rest_of_d.for y if y > x with area=y^2 (PICTURE: A)
+    # append square with area=y^2 (PICTURE: A)
     solution.append(Rect('A in Picture', triple.y, triple.y))
     # append rect angle form (PICTURE: B)
     solution.append(Rect('B in Picture', triple.x, triple.z-triple.y))
